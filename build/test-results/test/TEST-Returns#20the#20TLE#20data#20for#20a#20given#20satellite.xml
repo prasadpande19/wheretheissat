@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Returns the TLE data for a given satellite" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-07-25T15:13:39" hostname="C02YC32UJG5H" time="0.605">
+  <properties/>
+  <testcase name="To verify get tles endpoint returns the response as per the satelite" classname="Returns the TLE data for a given satellite" time="0.308"/>
+  <testcase name="To verify get tles endpoint returns error response for incorrect satellite" classname="Returns the TLE data for a given satellite" time="0.297"/>
+  <system-out><![CDATA[
+@HappyPath
+Scenario Outline: To verify get tles endpoint returns the response as per the satelite # src/test/resources/cucumber.features/Gettles.feature:13
+  Given user call the get endpoint for satellites "25544/tles"                         # com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)
+  When user receive a 200 HTTP response                                                # com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)
+io.restassured.path.json.JsonPath@7b0f9422
+Verified iss
+Verified 25544
+  Then verify response parameters are available                                        # com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List<java.util.List<java.lang.String>>)
+
+@UnhappyPath
+Scenario Outline: To verify get tles endpoint returns error response for incorrect satellite # src/test/resources/cucumber.features/Gettles.feature:25
+  Given user call the get endpoint for satellites "35544/tles"                               # com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)
+  When user receive a 404 HTTP response                                                      # com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)
+io.restassured.path.json.JsonPath@4d12a4df
+Verified satellite not found
+Verified 404
+  Then verify response parameters are available                                              # com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List<java.util.List<java.lang.String>>)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

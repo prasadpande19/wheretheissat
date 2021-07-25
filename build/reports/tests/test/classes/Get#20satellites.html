@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class Get satellites</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class Get satellites</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; Get satellites</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">5.598s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">To verify get satellites endpoint functionality using incorrect satellite id</td>
+<td class="success">0.438s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">To verify get satellites endpoint functionality using satellite ID</td>
+<td class="success">0.477s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">To verify user can fetch the list of satellites successfully</td>
+<td class="success">4.683s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+@HappyPath
+Scenario Outline: To verify user can fetch the list of satellites successfully # src/test/resources/cucumber.features/GetSatellites.feature:13
+  Given user call the get endpoint for satellites &quot;&quot;                           # com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)
+  When user receive a 200 HTTP response                                        # com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)
+io.restassured.path.json.JsonPath@7c27bbf5
+Verified iss
+Verified 25544
+  Then verify response parameters are available                                # com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List&lt;java.util.List&lt;java.lang.String&gt;&gt;)
+
+@HappyPath
+Scenario Outline: To verify get satellites endpoint functionality using satellite ID # src/test/resources/cucumber.features/GetSatellites.feature:26
+  Given user call the get endpoint for satellites &quot;25544&quot;                            # com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)
+  When user receive a 200 HTTP response                                              # com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)
+io.restassured.path.json.JsonPath@332c27e2
+Verified iss
+Verified 25544
+  Then verify response parameters are available                                      # com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List&lt;java.util.List&lt;java.lang.String&gt;&gt;)
+
+@UnhappyPath
+Scenario Outline: To verify get satellites endpoint functionality using incorrect satellite id # src/test/resources/cucumber.features/GetSatellites.feature:38
+  Given user call the get endpoint for satellites &quot;35544&quot;                                      # com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)
+  When user receive a 404 HTTP response                                                        # com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)
+io.restassured.path.json.JsonPath@3b93307d
+Verified satellite not found
+Verified 404
+  Then verify response parameters are available                                                # com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List&lt;java.util.List&lt;java.lang.String&gt;&gt;)
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/Prasad.Pande/.gradle/caches/6.3/generated-gradle-jars/gradle-api-6.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/Prasad.Pande/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.3/7c4f3c474fb2c041d8028740440937705ebb473a/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.gradle.internal.logging.slf4j.OutputEventListenerBackedLoggerContext]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.3</a> at 25 Jul 2021, 16:13:40</p>
+</div>
+</div>
+</body>
+</html>

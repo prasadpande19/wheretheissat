@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Returns result based on coordinates" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-07-25T15:13:37" hostname="C02YC32UJG5H" time="1.024">
+  <properties/>
+  <testcase name="To verify get coordinates endpoint returns position, current time offset, country code, and timezone id for a given set of coordinates in the format of longitude,latitude" classname="Returns result based on coordinates" time="0.408"/>
+  <testcase name="To verify get coordinates endpoint returns error response for incorrect lattitude and longitude" classname="Returns result based on coordinates" time="0.294"/>
+  <testcase name="To verify get coordinates endpoint returns error response for empty lattitude and longitude" classname="Returns result based on coordinates" time="0.321"/>
+  <system-out><![CDATA[
+@HappyPath
+Scenario Outline: To verify get coordinates endpoint returns position, current time offset, country code, and timezone id for a given set of coordinates in the format of longitude,latitude # src/test/resources/cucumber.features/Getcoordinates.feature:11
+/coordinates/81.955330,25.610177This is the  one 
+  Given user call the get endpoint for satellites "coordinates"                                                                                                                              # com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)
+  When user receive a 200 HTTP response                                                                                                                                                      # com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)
+  Then verify response parameters for coordinates                                                                                                                                            # com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersforcoordinates()
+
+@UnhappyPath
+Scenario Outline: To verify get coordinates endpoint returns error response for incorrect lattitude and longitude # src/test/resources/cucumber.features/Getcoordinates.feature:20
+/coordinates/Incorrect/73.748248,79.042126This is the  one 
+  Given user call the get endpoint for satellites "coordinates/Incorrect"                                         # com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)
+  When user receive a 404 HTTP response                                                                           # com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)
+  Then verify error response body                                                                                 # com.example.iss.stepdefs.GeneralSteps.verifyerrorresponsebody()
+
+@UnhappyPath
+Scenario Outline: To verify get coordinates endpoint returns error response for empty lattitude and longitude # src/test/resources/cucumber.features/Getcoordinates.feature:31
+/coordinates/Incorrect/Empty/61.718765,34.452622This is the  one 
+  Given user call the get endpoint for satellites "coordinates/Incorrect/Empty"                               # com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)
+  When user receive a 405 HTTP response                                                                       # com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)
+io.restassured.path.json.JsonPath@1274021e
+Verified Invalid controller specified (coordinates_Empty)
+Verified 404
+  Then verify response parameters are available                                                               # com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List<java.util.List<java.lang.String>>)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

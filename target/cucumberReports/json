@@ -1,0 +1,876 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-07-25T15:13:32.255Z",
+        "line": 13,
+        "name": "To verify user can fetch the list of satellites successfully",
+        "description": "",
+        "id": "get-satellites;to-verify-user-can-fetch-the-list-of-satellites-successfully;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3259612000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user call the get endpoint for satellites \"\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"\"",
+                  "offset": 42
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 138118000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user receive a 200 HTTP response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 938540000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "verify response parameters are available",
+            "match": {
+              "location": "com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List\u003cjava.util.List\u003cjava.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "id"
+                ]
+              },
+              {
+                "cells": [
+                  "iss",
+                  "25544"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@HappyPath"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-25T15:13:36.719Z",
+        "line": 26,
+        "name": "To verify get satellites endpoint functionality using satellite ID",
+        "description": "",
+        "id": "get-satellites;to-verify-get-satellites-endpoint-functionality-using-satellite-id;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 390273000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "user call the get endpoint for satellites \"25544\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"25544\"",
+                  "offset": 42
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 364000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user receive a 200 HTTP response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 74498000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "verify response parameters are available",
+            "match": {
+              "location": "com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List\u003cjava.util.List\u003cjava.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "id"
+                ]
+              },
+              {
+                "cells": [
+                  "iss",
+                  "25544"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@HappyPath"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-25T15:13:37.203Z",
+        "line": 38,
+        "name": "To verify get satellites endpoint functionality using incorrect satellite id",
+        "description": "",
+        "id": "get-satellites;to-verify-get-satellites-endpoint-functionality-using-incorrect-satellite-id;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 376684000,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "user call the get endpoint for satellites \"35544\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"35544\"",
+                  "offset": 42
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3772000,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "user receive a 404 HTTP response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 37539000,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "verify response parameters are available",
+            "match": {
+              "location": "com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List\u003cjava.util.List\u003cjava.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "error",
+                  "status"
+                ]
+              },
+              {
+                "cells": [
+                  "satellite not found",
+                  "404"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@UnhappyPath"
+          }
+        ]
+      }
+    ],
+    "name": "Get satellites",
+    "description": "",
+    "id": "get-satellites",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/cucumber.features/GetSatellites.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-07-25T15:13:37.634Z",
+        "line": 11,
+        "name": "To verify get coordinates endpoint returns position, current time offset, country code, and timezone id for a given set of coordinates in the format of longitude,latitude",
+        "description": "",
+        "id": "returns-result-based-on-coordinates;to-verify-get-coordinates-endpoint-returns-position--current-time-offset--country-code--and-timezone-id-for-a-given-set-of-coordinates-in-the-format-of-longitude-latitude;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 362144000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user call the get endpoint for satellites \"coordinates\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"coordinates\"",
+                  "offset": 42
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 410000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user receive a 200 HTTP response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 29292000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "verify response parameters for coordinates",
+            "match": {
+              "location": "com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersforcoordinates()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@HappyPath"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-25T15:13:38.041Z",
+        "line": 20,
+        "name": "To verify get coordinates endpoint returns error response for incorrect lattitude and longitude",
+        "description": "",
+        "id": "returns-result-based-on-coordinates;to-verify-get-coordinates-endpoint-returns-error-response-for-incorrect-lattitude-and-longitude;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 284977000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "user call the get endpoint for satellites \"coordinates/Incorrect\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"coordinates/Incorrect\"",
+                  "offset": 42
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 409000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user receive a 404 HTTP response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 304000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "verify error response body",
+            "match": {
+              "location": "com.example.iss.stepdefs.GeneralSteps.verifyerrorresponsebody()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@UnhappyPath"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-25T15:13:38.335Z",
+        "line": 31,
+        "name": "To verify get coordinates endpoint returns error response for empty lattitude and longitude",
+        "description": "",
+        "id": "returns-result-based-on-coordinates;to-verify-get-coordinates-endpoint-returns-error-response-for-empty-lattitude-and-longitude;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 275836000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "user call the get endpoint for satellites \"coordinates/Incorrect/Empty\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"coordinates/Incorrect/Empty\"",
+                  "offset": 42
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 213000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "user receive a 405 HTTP response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "405",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 29828000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "verify response parameters are available",
+            "match": {
+              "location": "com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List\u003cjava.util.List\u003cjava.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "error",
+                  "status"
+                ]
+              },
+              {
+                "cells": [
+                  "Invalid controller specified (coordinates_Empty)",
+                  "404"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@UnhappyPath"
+          }
+        ]
+      }
+    ],
+    "name": "Returns result based on coordinates",
+    "description": "",
+    "id": "returns-result-based-on-coordinates",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/cucumber.features/Getcoordinates.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-07-25T15:13:38.657Z",
+        "line": 13,
+        "name": "To verify get position endpoint returns success response with correct timestamp",
+        "description": "",
+        "id": "get-satellites-position;to-verify-get-position-endpoint-returns-success-response-with-correct-timestamp;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 326557000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user call the get endpoint for satellites \"25544/positions\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"25544/positions\"",
+                  "offset": 42
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 364000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user receive a 200 HTTP response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 38662000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "verify response parameters are available",
+            "match": {
+              "location": "com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List\u003cjava.util.List\u003cjava.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "id"
+                ]
+              },
+              {
+                "cells": [
+                  "iss",
+                  "25544"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@HappyPath"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-25T15:13:39.049Z",
+        "line": 25,
+        "name": "To verify get position endpoint returns error response with incorrect timestamp",
+        "description": "",
+        "id": "get-satellites-position;to-verify-get-position-endpoint-returns-error-response-with-incorrect-timestamp;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 292248000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user call the get endpoint for satellites \"25544/Incorrectpositions\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"25544/Incorrectpositions\"",
+                  "offset": 42
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 323000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "user receive a 404 HTTP response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 18677000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "verify response parameters are available",
+            "match": {
+              "location": "com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List\u003cjava.util.List\u003cjava.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "error",
+                  "status"
+                ]
+              },
+              {
+                "cells": [
+                  "Invalid controller specified (satellites_Incorrectpositions)",
+                  "404"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@UnhappyPath"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-25T15:13:39.369Z",
+        "line": 37,
+        "name": "To verify get position endpoint returns error response with incorrect sateliteID",
+        "description": "",
+        "id": "get-satellites-position;to-verify-get-position-endpoint-returns-error-response-with-incorrect-sateliteid;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 266842000,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "user call the get endpoint for satellites \"31544/Incorrectpositions\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"31544/Incorrectpositions\"",
+                  "offset": 42
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 982000,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "user receive a 404 HTTP response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 18427000,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "verify response parameters are available",
+            "match": {
+              "location": "com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List\u003cjava.util.List\u003cjava.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "error",
+                  "status"
+                ]
+              },
+              {
+                "cells": [
+                  "Invalid controller specified (satellites_Incorrectpositions)",
+                  "404"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@UnhappyPath"
+          }
+        ]
+      }
+    ],
+    "name": "Get satellites position",
+    "description": "",
+    "id": "get-satellites-position",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/cucumber.features/Getpositions.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-07-25T15:13:39.663Z",
+        "line": 13,
+        "name": "To verify get tles endpoint returns the response as per the satelite",
+        "description": "",
+        "id": "returns-the-tle-data-for-a-given-satellite;to-verify-get-tles-endpoint-returns-the-response-as-per-the-satelite;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 273676000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user call the get endpoint for satellites \"25544/tles\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"25544/tles\"",
+                  "offset": 42
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 289000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user receive a 200 HTTP response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 20666000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "verify response parameters are available",
+            "match": {
+              "location": "com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List\u003cjava.util.List\u003cjava.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "id"
+                ]
+              },
+              {
+                "cells": [
+                  "iss",
+                  "25544"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@HappyPath"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-25T15:13:39.976Z",
+        "line": 25,
+        "name": "To verify get tles endpoint returns error response for incorrect satellite",
+        "description": "",
+        "id": "returns-the-tle-data-for-a-given-satellite;to-verify-get-tles-endpoint-returns-error-response-for-incorrect-satellite;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 266251000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user call the get endpoint for satellites \"35544/tles\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"35544/tles\"",
+                  "offset": 42
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 268000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "user receive a 404 HTTP response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 21695000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "verify response parameters are available",
+            "match": {
+              "location": "com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List\u003cjava.util.List\u003cjava.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "error",
+                  "status"
+                ]
+              },
+              {
+                "cells": [
+                  "satellite not found",
+                  "404"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@UnhappyPath"
+          }
+        ]
+      }
+    ],
+    "name": "Returns the TLE data for a given satellite",
+    "description": "",
+    "id": "returns-the-tle-data-for-a-given-satellite",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/cucumber.features/Gettles.feature",
+    "tags": []
+  }
+]

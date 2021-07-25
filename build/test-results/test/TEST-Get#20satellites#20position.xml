@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Get satellites position" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-07-25T15:13:38" hostname="C02YC32UJG5H" time="1.009">
+  <properties/>
+  <testcase name="To verify get position endpoint returns success response with correct timestamp" classname="Get satellites position" time="0.389"/>
+  <testcase name="To verify get position endpoint returns error response with incorrect timestamp" classname="Get satellites position" time="0.322"/>
+  <testcase name="To verify get position endpoint returns error response with incorrect sateliteID" classname="Get satellites position" time="0.297"/>
+  <system-out><![CDATA[
+@HappyPath
+Scenario Outline: To verify get position endpoint returns success response with correct timestamp # src/test/resources/cucumber.features/Getpositions.feature:13
+  Given user call the get endpoint for satellites "25544/positions"                               # com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)
+  When user receive a 200 HTTP response                                                           # com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)
+io.restassured.path.json.JsonPath@278d4481
+Verified iss
+Verified 25544
+  Then verify response parameters are available                                                   # com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List<java.util.List<java.lang.String>>)
+
+@UnhappyPath
+Scenario Outline: To verify get position endpoint returns error response with incorrect timestamp # src/test/resources/cucumber.features/Getpositions.feature:25
+  Given user call the get endpoint for satellites "25544/Incorrectpositions"                      # com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)
+  When user receive a 404 HTTP response                                                           # com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)
+io.restassured.path.json.JsonPath@1faeb590
+Verified Invalid controller specified (satellites_Incorrectpositions)
+Verified 404
+  Then verify response parameters are available                                                   # com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List<java.util.List<java.lang.String>>)
+
+@UnhappyPath
+Scenario Outline: To verify get position endpoint returns error response with incorrect sateliteID # src/test/resources/cucumber.features/Getpositions.feature:37
+  Given user call the get endpoint for satellites "31544/Incorrectpositions"                       # com.example.iss.stepdefs.GeneralSteps.usercallthegetendpointforsatelite(java.lang.String)
+  When user receive a 404 HTTP response                                                            # com.example.iss.stepdefs.GeneralSteps.userreceiveahttpresponse(java.lang.Integer)
+io.restassured.path.json.JsonPath@d55020e
+Verified Invalid controller specified (satellites_Incorrectpositions)
+Verified 404
+  Then verify response parameters are available                                                    # com.example.iss.stepdefs.GeneralSteps.verifyresponseparametersavailable(java.util.List<java.util.List<java.lang.String>>)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
